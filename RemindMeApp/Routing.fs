@@ -8,9 +8,10 @@ let routes: HttpFunc -> HttpFunc =
     choose [
         GET >=>
             choose [
-                route "/" >=> text "Hello, this is RemindMe!"
-                route "/api/remind" >=> handleGetReminds
+                route   "/"                 >=> text "Hello, this is RemindMe!"
+                route   "/api/remind"       >=> handleGetReminds
+                routef  "/api/remind/%s"    handleGetRemind
             ]
-        setStatusCode 404 >=> text "Not Found"
+        RequestErrors.NOT_FOUND "Not found!"
     ]
 
