@@ -1,8 +1,7 @@
-module Routing
+[<AutoOpen>]
+module RemindMe.Routing
 
 open Giraffe
-
-open Handlers
 
 let routes: HttpFunc -> HttpFunc =
     choose [

@@ -1,4 +1,5 @@
-module Types
+[<AutoOpen>]
+module RemindMe.Types
 
 open System
 
